@@ -1,0 +1,49 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://jWallet.cc/",
+      "restart": false,
+      "browser": "chrome",
+      "platform": "Windows 10",
+      "windowSize": "1600x800",
+      "smartWait": 3000,
+      "port": 4444
+    }
+  },
+  "include": {
+    "I": "./steps_file.js",
+    "loginPage": "./pages/Login.js",
+    "historyPage": "./pages/History.js",
+    "homePage": "./pages/HomePage.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": true
+    }
+  },
+  "multiple": {
+    "basic": {
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
+    },
+    "parallel": {
+      "chunks": 2,
+      "browsers": [
+        "firefox",
+        "chrome",
+        "internet explorer"
+      ]
+    }
+  },
+  "tests": "tests/*_test.js",
+  "timeout": 10000,
+  "name": "Jwallet"
+}
